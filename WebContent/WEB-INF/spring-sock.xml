@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd     
+           http://www.springframework.org/schema/context     
+           http://www.springframework.org/schema/context/spring-context-4.2.xsd
+           http://www.springframework.org/schema/websocket
+           http://www.springframework.org/schema/websocket/spring-websocket-4.2.xsd">
+
+	<!-- ws处理类/拦截类 -->
+	<bean id="wsHandler" class="com.easywork.mystery.ws.WsHandler" />
+	<websocket:handlers allowed-origins="*">
+		<websocket:mapping path="/WsServer" handler="wsHandler" />
+		<websocket:handshake-interceptors>
+			<bean class="com.easywork.mystery.ws.WsInterceptor" />
+		</websocket:handshake-interceptors>
+	</websocket:handlers>
+</beans>

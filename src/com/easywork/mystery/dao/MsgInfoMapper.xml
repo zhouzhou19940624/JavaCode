@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easywork.mystery.dao.MsgInfoMapper">
+  <resultMap id="BaseResultMap" type="com.easywork.mystery.entity.MsgInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  
+  <insert id="insertandgetprimarykey" keyProperty="id" parameterType="com.easywork.mystery.entity.MsgInfo" useGeneratedKeys="true">
+            insert into msg_info(title,content,state) values(#{title},#{content},#{state})
+  </insert>
+  
+</mapper>

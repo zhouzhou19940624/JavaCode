@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easywork.mystery.dao.MsgCommMapper">
+  <resultMap id="BaseResultMap" type="com.easywork.mystery.entity.MsgComm">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="receiverId" jdbcType="BIGINT" property="receiverid" />
+    <result column="receiverAccount" jdbcType="VARCHAR" property="receiveraccount" />
+    <result column="senderId" jdbcType="BIGINT" property="senderid" />
+    <result column="senderAccount" jdbcType="VARCHAR" property="senderaccount" />
+    <result column="msgId" jdbcType="BIGINT" property="msgid" />
+    <result column="msgTitle" jdbcType="VARCHAR" property="msgtitle" />
+    <result column="readflag" jdbcType="INTEGER" property="readflag" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+  </resultMap>
+  
+  
+  
+<!--   &amp;amp;amp;amp;lt;update id="updatemsgid"&amp;amp;amp;amp;gt;
+  update  msg_comm set msgId  = #{msgId}  where msgTitle = #{title}
+  &amp;amp;amp;amp;lt;/update&amp;amp;amp;amp;gt; -->
+  
+  
+  
+</mapper>

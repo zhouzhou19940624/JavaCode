@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+	<!-- 应用名 -->
+	<dubbo:application name="MyConsumer" />
+	<!-- 注册/暴露 -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	<!-- 接口/无实现 -->
+	<!-- <dubbo:reference id="demoService" interface="com.easywork.mystery.rpc.DemoService" 
+		/> -->
+	<!-- 注解式 -->
+	<dubbo:annotation package="com.easywork.mystery.rpc" />
+	<!-- 关闭检查 -->
+	<dubbo:consumer check="false" />
+</beans>

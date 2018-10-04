@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+	<!-- 应用名 -->
+	<dubbo:application name="MyProvider" />
+	<!-- 注册/暴露 -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	<dubbo:protocol name="dubbo" port="20880" />
+	<!-- 接口/实现 -->
+	<!-- <dubbo:service interface="com.easywork.mystery.rpc.DemoService" ref="demoService" 
+		/> <bean id="demoService" class="com.easywork.mystery.rpc.DemoServiceImpl" 
+		/> -->
+	<!-- 注解式 -->
+	<dubbo:annotation package="com.easywork.mystery.rpc" />
+</beans>
